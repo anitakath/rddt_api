@@ -1,0 +1,15 @@
+
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.output_field{
+    border: 2px solid purple;
+    width: 50vw;
+    min-height: 500px;
+    margin: 20px;
+}
