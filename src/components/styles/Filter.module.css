@@ -1,0 +1,30 @@
+
+
+.container{
+    width: 50vw;
+    height: 40px;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+
+.container div{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter_btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.4s ease;
+    font-size: 1.1rem;
+}
+
+.filter_btn:hover{
+    color: #F7567C;
+}

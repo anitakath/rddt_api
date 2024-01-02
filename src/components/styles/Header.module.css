@@ -8,7 +8,7 @@
     position: relative;
 }
 
-h1, button{
+.title{
     margin: 30px;
     background: transparent;
     border: none;
@@ -24,32 +24,42 @@ h1, button{
 
 
 .searchInput{
-    width: 200px;
+    width: 300px;
     height: 30px;
     padding: 5px;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid black;
     transition: 0.2s ease;
 }
 
 .search_btn{
-   position: absolute;
-   right: -29px;
-   transition: 0.4s ease;
-}
-
-.search_btn:hover{
-    height: 100%;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: -29px;
+    transition: 0.4s ease;
+    margin: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 
 
 .searchInput:hover, .searchInput:focus{
-    border: 2px solid #F7567C;
+    border-bottom: 2px solid #F7567C;
     outline: none;
 }
 
+
+.login_container{
+    display: flex;
+    align-items: center;
+}
+
+.loginWrapper{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
 
 
 .menu_btn{
@@ -57,6 +67,9 @@ h1, button{
     font-size: 1.4rem;
     border-radius: 5px;
     padding: 10px;
+      margin: 30px;
+    background: transparent;
+    border: none;
 }
 
 .menu_btn:hover, .search_btn:hover{
@@ -76,3 +89,48 @@ h1, button{
     left:-800px;
     padding: 10px;
 }
+
+.loggedIn_wrapper{
+    position: relative;
+}
+
+.loggedInMenu_btn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.loggedInMenu{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    padding: 10px;
+    width: 300px;
+    height: 80vh;
+}
+
+.login, .register{
+    transition: 0.4s ease;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/*
+.login{
+    background: #F7567C;
+}
+
+.login:hover{
+    background: transparent;
+}
+
+.register{
+    background: transparent;
+}
+
+.register:hover{
+    background: #F7567C;
+}*/

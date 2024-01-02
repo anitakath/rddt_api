@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react'
 
 
 
+//COMPONENTS
+import Filter from './Filter'
+
+//REDUX
+import { useSelector } from 'react-redux'
+
 //STYLES
 import styles from './styles/Main.module.css'
 
@@ -10,6 +16,9 @@ import styles from './styles/Main.module.css'
 const Main = () =>{
 
     const [posts, setPosts] = useState([])
+
+    
+  const currentFilter = useSelector((state) => state.filter); 
 
 
 
@@ -37,9 +46,11 @@ const Main = () =>{
 
     return(
         <div className={styles.container}>
-            MAIN
+            <Filter/>
+            
             <div className={styles.output_field}>
-                output field
+                {currentFilter}
+
             </div>
         </div>
     )

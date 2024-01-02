@@ -8,8 +8,10 @@
 }
 
 .output_field{
-    border: 2px solid purple;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background:#5D576B;
     width: 50vw;
-    min-height: 500px;
+    min-height: 500vh;
     margin: 20px;
 }
