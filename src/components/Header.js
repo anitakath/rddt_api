@@ -13,6 +13,16 @@ import LoggedInMenu from './LoggedInMenu';
 //STYLES
 import styles from './styles/Header.module.css'
 
+//FONT AWESOME
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+import { faRedditAlien } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+
+// Fügen Sie das Symbol zur Bibliothek hinzu
+library.add(faRedditAlien);
+
 const Header = () =>{
 
   const dispatch = useDispatch();
@@ -24,19 +34,20 @@ const Header = () =>{
   console.log(currentFilter);
 
     const [menuIsOpen, setMenuIsOpen] = useState(false)
+    
 
 
-    const menu = document.getElementById('menu')
+    console.log(menuIsOpen)
 
 
     const menuHandler = (e) =>{
 
        if(menuIsOpen === true){
            setMenuIsOpen(false)
-           menu.style.left = "-800px";
+           
        } else{
            setMenuIsOpen(true)
-           menu.style.left = "0px";
+           
        }
     }
 
@@ -58,14 +69,22 @@ const Header = () =>{
 
     }
 
-   console.log(loggedInMenuIsOpen);
 
+      const reloadPage = () => {
+        window.location.reload();
+      };
 
 
 
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}> Title </h1>
+        <h1 className={styles.title}>
+          <FontAwesomeIcon
+            icon={faRedditAlien}
+            className={styles.icon}
+            onClick={reloadPage}
+          />
+        </h1>
         <div className={styles.search_container}>
           <input
             type="search"
@@ -84,7 +103,13 @@ const Header = () =>{
           <div className={styles.loginWrapper}>
             {isLoggedIn && (
               <div className={styles.loggedIn_wrapper}>
-                <button className={styles.loggedInMenu_btn} onClick={loggedInMenuHandler}> logged in</button>
+                <button
+                  className={styles.loggedInMenu_btn}
+                  onClick={loggedInMenuHandler}
+                >
+                  {" "}
+                  <FontAwesomeIcon icon={faUser} className={styles.user} />
+                </button>
                 {loggedInMenuIsOpen && (
                   <div className={styles.loggedInMenu}>
                     <LoggedInMenu />
@@ -104,9 +129,15 @@ const Header = () =>{
           </div>
         </div>
 
-        <div className={styles.menu_container} id="menu">
-          MENUUUU :-)
-        </div>
+        {menuIsOpen && (
+          <div className={styles.menu_backdrop} onClick={menuHandler}></div>
+        )}
+
+        {menuIsOpen && (
+          <div className={styles.menu_container} id="menu">
+            MENUUUU
+          </div>
+        )}
       </div>
     );
 }
