@@ -62,23 +62,47 @@ const Filter = () =>{
     }
 
     return (
-      <div className={styles.container}>
-        <div>
-          <button 
-            className={styles.filter_btn} 
-            onClick={() => filterHandler('beste')}> beste </button>
-        </div>
-        <div>
-          <button className={styles.filter_btn} onClick={() => filterHandler('heiß')}> heiß </button>
-        </div>
-        <div>
-          <button className={styles.filter_btn} onClick={() => filterHandler('neu')}> neu </button>
-        </div>
-        <div>
-          <button className={styles.filter_btn} onClick={() => filterHandler('top')}> top </button>
-        </div>
-        <div>
-          <button className={styles.filter_btn}> reload </button>
+      <div className={styles.container_wrapper}>
+        <div className={styles.container}>
+          <div>
+            <button
+              className={styles.filter_btn}
+              onClick={() => filterHandler("beste")}
+            >
+              {" "}
+              beste{" "}
+            </button>
+          </div>
+          <div>
+            <button
+              className={styles.filter_btn}
+              onClick={() => filterHandler("heiß")}
+            >
+              {" "}
+              heiß{" "}
+            </button>
+          </div>
+          <div>
+            <button
+              className={styles.filter_btn}
+              onClick={() => filterHandler("neu")}
+            >
+              {" "}
+              neu{" "}
+            </button>
+          </div>
+          <div>
+            <button
+              className={styles.filter_btn}
+              onClick={() => filterHandler("top")}
+            >
+              {" "}
+              top{" "}
+            </button>
+          </div>
+          <div>
+            <button className={styles.filter_btn}> reload </button>
+          </div>
         </div>
       </div>
     );

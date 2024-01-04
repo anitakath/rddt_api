@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 
 //COMPONENTS
 import Filter from './Filter'
+import Feed from './feed/Feed'
 
 //REDUX
 import { useSelector } from 'react-redux'
@@ -18,7 +19,7 @@ const Main = () =>{
     const [posts, setPosts] = useState([])
 
     
-  const currentFilter = useSelector((state) => state.filter); 
+    const currentFilter = useSelector((state) => state.filter); 
 
 
 
@@ -44,16 +45,19 @@ const Main = () =>{
 
     console.log(posts);
 
-    return(
-        <div className={styles.container}>
-            <Filter/>
-            
-            <div className={styles.output_field}>
-                {currentFilter}
+    return (
+      <div className={styles.container}>
+        
 
-            </div>
+        <div className={styles.output_field}>
+          <Feed />
         </div>
-    )
+
+        <div className={styles.webUser_container}>
+          user 
+        </div>
+      </div>
+    );
 }
 
 export default Main 

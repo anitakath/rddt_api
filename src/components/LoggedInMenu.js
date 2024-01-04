@@ -16,7 +16,7 @@ const LoggedInMenu = () =>{
 
 
     return (
-      <div>
+      <div className={styles.container}>
         <p> Einstellungen </p>
         <p> Profil </p>
         <p> Nachtmodus </p>
